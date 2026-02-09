@@ -8,7 +8,7 @@ This directory contains Kubernetes manifests for the application managed by Argo
 ### deployment.yaml
 Defines the application deployment with:
 - **Namespace**: `dev`
-- **Image**: `svvoii/iot-app:v1` (public Docker Hub repository)
+- **Image**: [`svvoii/iot-app:v1`](https://hub.docker.com/r/svvoii/iot-app) (public Docker Hub repository)
 - **Container port**: 8888
 - **Replicas**: 1 pod
 
@@ -58,7 +58,7 @@ The app returns JSON responses with version information.
 The image is used in the `deployment.yaml` manifest to run the application in the Kubernetes cluster.
 
 The application image on Docker Hub:
-- **Repository**: `https://hub.docker.com/r/svvoii/iot-app`
+- **Repository**: [`https://hub.docker.com/r/svvoii/iot-app`](https://hub.docker.com/r/svvoii/iot-app)
 - **Versions**: 
   - `svvoii/iot-app:v1` - Returns `{"status":"ok", "message":"v1", ...}`
   - `svvoii/iot-app:v2` - Returns `{"status":"ok", "message":"v2", ...}`
@@ -88,11 +88,14 @@ git push
 curl http://localhost:8888/
 ```
 
+or log in to ArgoCD UI in the browser.  
+
 ---
 
 ## ArgoCD Application Setup
 
-!!! *NOTE*: The ArgoCD Application resource is defined in `argocd-application.yaml` at the project root and it is NOT a part of this repo. It is applied separately to the cluster to tell ArgoCD where to find these manifests and how to manage them.  
+! ! ! *NOTE*: ! ! !  
+ArgoCD Application resource is defined in `argocd-application.yaml` at the project root and it is NOT (nor should be) a part of this repo. It is applied separately to the cluster to tell ArgoCD where to find these manifests and how to manage them.  
 
 ### `argocd-application.yaml` example:
 ```yaml
