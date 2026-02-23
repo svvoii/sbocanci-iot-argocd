@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: iot-app
-        image: svvoii/iot-app:v2
+        image: svvoii/iot-app:v1
         ports:
         - containerPort: 8888
